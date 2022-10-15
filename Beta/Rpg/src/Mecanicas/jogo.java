@@ -1,7 +1,6 @@
 package Mecanicas;
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,7 +23,7 @@ public class jogo {
 	Font fonteNormal = new Font("Times New Roman", Font.PLAIN, 28);
 	JTextArea areaPrincipalTexto;
 	TituloTelaManipulador ttManipulador = new TituloTelaManipulador();
-	int vidaPlayer, vidaMonstro;
+	int vidaPlayer, vidaMonstro, amuleto;
 	String armaPlayer, posicao;
 	EscolhaManipulador eManipulador = new EscolhaManipulador();
 	
@@ -195,14 +194,24 @@ public class jogo {
 	
 	public void ganhou() {
 		posicao = "ganhou";
-		areaPrincipalTexto.setText("Você derrotou o monstro!!!");
+		areaPrincipalTexto.setText("Você derrotou o monstro!!! \nGanhou um Amuleto");
+		
+		amuleto = 1;
+		
+		escolha1.setText("Falar com guarda");
+		escolha2.setText("");
+		escolha3.setText("");
+		escolha4.setText("");
+		escolha2.setVisible(false);
+		escolha3.setVisible(false);
+		escolha4.setVisible(false);
 	}
 	
 	public void perdeu() {
 		posicao = "perdeu";
 		areaPrincipalTexto.setText("THE END MORREU");
 		
-		escolha1.setText("Reiniciar");
+		escolha1.setText("");
 		escolha2.setText("");
 		escolha3.setText("");
 		escolha4.setText("");
