@@ -341,6 +341,7 @@ public class jogo {
 					else {
 						ganhou();
 					}
+					break;
 				case "e2": break;
 				case "e3": break;
 				case "e4": break;
