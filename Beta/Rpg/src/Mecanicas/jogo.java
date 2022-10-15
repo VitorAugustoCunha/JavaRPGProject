@@ -206,6 +206,10 @@ public class jogo {
 		escolha2.setText("");
 		escolha3.setText("");
 		escolha4.setText("");
+		escolha1.setVisible(false);
+		escolha2.setVisible(false);
+		escolha3.setVisible(false);
+		escolha4.setVisible(false);
 	}
 	
 	public void portao() {
@@ -290,6 +294,20 @@ public class jogo {
 		escolha4.setText("");
 	}
 	
+	public void finalJogo() {
+		posicao = "final";
+		areaPrincipalTexto.setText("Você completou a missão. \n\nFinal de jogo");
+		
+		escolha1.setText("");
+		escolha2.setText("");
+		escolha3.setText("");
+		escolha4.setText("");
+		escolha1.setVisible(false);
+		escolha2.setVisible(false);
+		escolha3.setVisible(false);
+		escolha4.setVisible(false);
+		
+	}
 	
 //Click funcao
 
@@ -369,7 +387,7 @@ public class jogo {
 				break;
 			case "perdeu":
 				switch(suaEscolha) {
-				case "e1": portao(); metodosPlaye(); break;
+				case "e1": break;
 				case "e2": break;
 				case "e3": break;
 				case "e4": break;
