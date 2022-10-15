@@ -194,7 +194,8 @@ public class jogo {
 	}
 	
 	public void ganhou() {
-		
+		posicao = "ganhou";
+		areaPrincipalTexto.setText("Você derrotou o monstro!!!");
 	}
 	
 	public void perdeu() {
@@ -272,6 +273,7 @@ public class jogo {
 		
 	}
 	
+	
 	public void danoMonstro(){
 		posicao = "defender";
 		int monstroDano = 0;
@@ -337,7 +339,14 @@ public class jogo {
 				break;
 			case "atacar":
 				switch(suaEscolha){
-				case "e1": danoMonstro();
+				case "e1": 
+					if (vidaMonstro<1) {
+					ganhou();
+				}
+					else {
+						danoMonstro();
+					}
+				break;
 				case "e2": break;
 				case "e3": break;
 				case "e4": break;
@@ -349,21 +358,27 @@ public class jogo {
 					if(vidaPlayer<1){
 						perdeu();
 					}
-					luta(); break;
+					else {
+						luta();
+					}
+					break;
 				case "e2": break;
 				case "e3": break;
 				case "e4": break;
 				}
 				break;
 			case "perdeu":
-				switch(suaEscolha){
-				case "e1": break;
-				case "e2": portao();break;
+				switch(suaEscolha) {
+				case "e1": portao(); metodosPlaye(); break;
+				case "e2": break;
 				case "e3": break;
 				case "e4": break;
 				}
 				break;
-			
+			case "ganhou":
+				switch(suaEscolha) {
+				case "e1": falarGuarda(); break;
+				}
 			}
 			
 			
