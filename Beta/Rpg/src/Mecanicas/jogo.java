@@ -334,7 +334,13 @@ public class jogo {
 			switch(posicao){
 			case "portao":
 				switch(suaEscolha){
-				case "e1": falarGuarda(); break;
+				case "e1": 
+					if (amuleto == 1) {
+						falarGuarda();
+					}
+					else {
+						ganhou();
+					}
 				case "e2": break;
 				case "e3": break;
 				case "e4": break;
