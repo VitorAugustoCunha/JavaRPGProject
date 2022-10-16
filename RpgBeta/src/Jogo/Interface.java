@@ -18,10 +18,10 @@ public class Interface {
 	JPanel tituloNomePanel, botaoInicioPanel, textoPrincipalPanel, botaoAcaoPanel;
 	public JPanel playerPanel;
 	public JLabel tituloNomeLabel, vidaLabel, numeroVidaLabel, armaLabel, nomeArmaLabel;
-	JButton botaoInicio, escolha1, escolha2, escolha3, escolha4;
+	public JButton botaoInicio, escolha1, escolha2, escolha3, escolha4;
 	Font fonteNormal = new Font("Times New Roman", Font.PLAIN, 28);
 	Font tituloFonte = new Font("Times New Roman", Font.PLAIN, 90);
-	JTextArea areaPrincipalTexto;
+	public JTextArea areaPrincipalTexto;
 	Container Cont;
 	
 	
