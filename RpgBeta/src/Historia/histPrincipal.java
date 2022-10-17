@@ -27,6 +27,7 @@ public class histPrincipal {
 	
 	public void padraoSetup() {
 		player.vidaPlayer = 10;
+		player.nomePlayer = "Vitor";
 		inter.numeroVidaLabel.setText(""+player.vidaPlayer);
 		
 		player.armaAtual = new canivete();
@@ -41,6 +42,9 @@ public class histPrincipal {
 		case "norte": norte(); break;
 		case "leste": leste(); break;
 		case "sul": sul(); break;
+		case "histiniciopUM": histiniciopUM(); break;
+		case "histinicioDois": histiniciopDois(); break;
+		case "histiniciopTres": histiniciopTres(); break;
 		}
 	}
 	
@@ -67,7 +71,7 @@ public class histPrincipal {
 		
 		jogo.novaPosicao1 = "portaoInicio";
 		jogo.novaPosicao2 = "";
-		jogo.novaPosicao3 = "";
+		jogo.novaPosicao3 = "histiniciopUM";
 		jogo.novaPosicao4 = "";
 	}
 	public void atacarGuarda() {
@@ -169,5 +173,48 @@ public class histPrincipal {
 		inter.escolha4.setText("");
 		
 		
+	}
+	public void histiniciopUM() {
+		inter.areaPrincipalTexto.setText("Era uma vez um pequeno macaquinho \nEle habitava em uma ilha \nlá ele tinha uma casa na maior das árvores \nlocal este que era invejado pelos outros animais");
+		inter.escolha1.setText("");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText(">");
+		inter.escolha1.setVisible(false);
+		inter.escolha2.setVisible(false);
+		inter.escolha3.setVisible(false);
+		inter.armaLabel.setVisible(false);
+		inter.vidaLabel.setVisible(false);
+		inter.numeroVidaLabel.setVisible(false);
+		inter.nomeArmaLabel.setVisible(false);
+
+		jogo.novaPosicao4 = "histinicioDois";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao1 = "";
+	}
+	public void histiniciopDois() {
+		inter.areaPrincipalTexto.setText("a casa era grande e bonita \nSua madeira era da melhor qualidade possível \na olhar pela janela via-se uma paisagem \ntão bela quanto o nascer do sol");
+		inter.escolha1.setText("");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText(">");
+
+		jogo.novaPosicao1 = "";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao4 = "histiniciopTres";
+	}
+	public void histiniciopTres() {
+		inter.areaPrincipalTexto.setText("esse macaquinho se chamava "+player.nomePlayer+"\ntrabalhava como guarda da ilha em que vivia \ncom o passar dos anos "+player.nomePlayer+" \nencontrou enquanto andava pela ilha o seu amor");
+		inter.escolha1.setText("");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText(">");
+
+		jogo.novaPosicao1 = "";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao4 = "histiniciopQuatro";
 	}
 }
