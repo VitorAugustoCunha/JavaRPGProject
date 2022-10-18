@@ -6,5 +6,6 @@ public class player {
 	public String nomePlayer;
 	public int vidaPlayer;
 	public SuperArmas armaAtual;
+	public int amuleto;
 	
 }

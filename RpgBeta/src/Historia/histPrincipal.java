@@ -27,11 +27,11 @@ public class histPrincipal {
 	
 	public void padraoSetup() {
 		player.vidaPlayer = 10;
-		player.nomePlayer = "Vitor";
 		inter.numeroVidaLabel.setText(""+player.vidaPlayer);
 		
 		player.armaAtual = new canivete();
 		inter.nomeArmaLabel.setText(player.armaAtual.nomeArma);
+		player.amuleto = 0;
 	}
 	public void escolherPossicao(String novaPissicao) {
 		switch(novaPissicao) {
@@ -42,9 +42,16 @@ public class histPrincipal {
 		case "norte": norte(); break;
 		case "leste": leste(); break;
 		case "sul": sul(); break;
-		case "histiniciopUM": histiniciopUM(); break;
-		case "histinicioDois": histiniciopDois(); break;
-		case "histiniciopTres": histiniciopTres(); break;
+		case "paraTitulo": paraTitulo(); break;
+		case "vitoria": vitoria(); break;
+		case "derrota": derrota(); break;
+		case "finalHisto": finalHisto(); break;
+		case "lutar": lutar(); break;
+		case "oeste": oeste(); break;
+		case "atacarMostro": atacarMostro(); break;
+		case "playerLuta": playerLuta(); break;
+
+
 		}
 	}
 	
@@ -63,16 +70,21 @@ public class histPrincipal {
 	}
 	
 	public void falarGuarda() {
-		inter.areaPrincipalTexto.setText("Estranho olá, você está passando por essas banda \nTenho uma missão para você \nVocê aceita?");
-		inter.escolha1.setText(">");
-		inter.escolha2.setText("");
-		inter.escolha3.setText("");
-		inter.escolha4.setText("");
-		
-		jogo.novaPosicao1 = "portaoInicio";
-		jogo.novaPosicao2 = "";
-		jogo.novaPosicao3 = "histiniciopUM";
-		jogo.novaPosicao4 = "";
+		if(player.amuleto == 0) {
+			inter.areaPrincipalTexto.setText("Estranho olá, você está passando por essas banda \nTenho uma missão para você \nVocê aceita?");
+			inter.escolha1.setText(">");
+			inter.escolha2.setText("");
+			inter.escolha3.setText("");
+			inter.escolha4.setText("");
+			
+			jogo.novaPosicao1 = "portaoInicio";
+			jogo.novaPosicao2 = "";
+			jogo.novaPosicao3 = "";
+			jogo.novaPosicao4 = "";
+		}
+		else if(player.amuleto == 1) {
+			finalHisto();
+		}
 	}
 	public void atacarGuarda() {
 		inter.areaPrincipalTexto.setText("Você recebeu 3 de dano \nO quê você vai fazer?");
@@ -97,7 +109,7 @@ public class histPrincipal {
 		
 		jogo.novaPosicao1 = "norte";
 		jogo.novaPosicao2 = "sul";
-		jogo.novaPosicao3 = "portaoInicio";
+		jogo.novaPosicao3 = "leste";
 		jogo.novaPosicao4 = "oeste";
 	}
 	public void norte() {
@@ -142,7 +154,18 @@ public class histPrincipal {
 		jogo.novaPosicao4 = "";
 	}
 	public void oeste() {
+		inter.areaPrincipalTexto.setText("Você encontrou uma armadilha \nPerde 5 de vida \nO quê você vai fazer?");
+		player.vidaPlayer = player.vidaPlayer - 5;
+		inter.numeroVidaLabel.setText(""+player.vidaPlayer);
+		inter.escolha1.setText("Estrada de ferro");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
 		
+		jogo.novaPosicao1 = "estradaFerro";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao4 = "";
 	}
 	public void lutar() {
 		inter.areaPrincipalTexto.setText(monstro.nomeMonstro+": "+monstro.vidaMonstro+"\n O quê você vai fazer?");
@@ -167,54 +190,88 @@ public class histPrincipal {
 //		}
 		
 		inter.areaPrincipalTexto.setText("Você atacou o "+monstro.nomeMonstro+" e deu "+playerDamage+" no alvo");
+		monstro.vidaMonstro = monstro.vidaMonstro - playerDamage;
+
 		inter.escolha1.setText(">");
 		inter.escolha2.setText("");
 		inter.escolha3.setText("");
 		inter.escolha4.setText("");
-		
-		
+
+		if(monstro.vidaMonstro > 0){
+			jogo.novaPosicao1 = "atacarMostro";
+			jogo.novaPosicao2 = "";
+			jogo.novaPosicao3 = "";
+			jogo.novaPosicao4 = "";
+		}
+		else if(monstro.vidaMonstro < 0){
+			jogo.novaPosicao1 = "vitoria";
+			jogo.novaPosicao2 = "";
+			jogo.novaPosicao3 = "";
+			jogo.novaPosicao4 = "";
+		}
 	}
-	public void histiniciopUM() {
-		inter.areaPrincipalTexto.setText("Era uma vez um pequeno macaquinho \nEle habitava em uma ilha \nlá ele tinha uma casa na maior das árvores \nlocal este que era invejado pelos outros animais");
-		inter.escolha1.setText("");
+	public void atacarMostro(){
+		int ataqueMonsto = new java.util.Random().nextInt(monstro.danoMonstro);
+		player.vidaPlayer = player.vidaPlayer - ataqueMonsto;
+		inter.numeroVidaLabel.setText(""+player.vidaPlayer);
+		inter.areaPrincipalTexto.setText(monstro.monstroAtaqueMensagem+"\nVocê sofreu "+ataqueMonsto+" De dano");
+
+		inter.escolha1.setText(">");
 		inter.escolha2.setText("");
 		inter.escolha3.setText("");
-		inter.escolha4.setText(">");
+		inter.escolha4.setText("");
+
+		if(player.vidaPlayer > 0) {
+			jogo.novaPosicao1 = "playerLuta";
+			jogo.novaPosicao2 = "";
+			jogo.novaPosicao3 = "";
+			jogo.novaPosicao4 = "";
+		}
+		else if(player.vidaPlayer < 1) {
+			jogo.novaPosicao1 = "derrota";
+			jogo.novaPosicao2 = "";
+			jogo.novaPosicao3 = "";
+			jogo.novaPosicao4 = "";
+		}
+	}
+	public void vitoria(){
+		inter.areaPrincipalTexto.setText("Você derrotou o "+monstro.nomeMonstro+"\nVocê conseguiu um amuleto");
+		player.amuleto = player.amuleto + 1;
+
+		inter.escolha1.setText("Ir para o oeste");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+
+		jogo.novaPosicao1 = "estradaFerro";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao4 = "";
+	}
+	public void derrota() {
+		inter.areaPrincipalTexto.setText("Você morreu \nGame over");
+		player.amuleto = player.amuleto + 1;
+
+		inter.escolha1.setText("Ir para tela de inicio");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+
+		jogo.novaPosicao1 = "paraTitulo";
+		jogo.novaPosicao2 = "";
+		jogo.novaPosicao3 = "";
+		jogo.novaPosicao4 = "";
+	}
+	public void finalHisto() {
+		inter.areaPrincipalTexto.setText("Obrigado por ter derrotado o monstro");
 		inter.escolha1.setVisible(false);
 		inter.escolha2.setVisible(false);
 		inter.escolha3.setVisible(false);
-		inter.armaLabel.setVisible(false);
-		inter.vidaLabel.setVisible(false);
-		inter.numeroVidaLabel.setVisible(false);
-		inter.nomeArmaLabel.setVisible(false);
-
-		jogo.novaPosicao4 = "histinicioDois";
-		jogo.novaPosicao2 = "";
-		jogo.novaPosicao3 = "";
-		jogo.novaPosicao1 = "";
+		inter.escolha4.setVisible(false);
+		paraTitulo();
 	}
-	public void histiniciopDois() {
-		inter.areaPrincipalTexto.setText("a casa era grande e bonita \nSua madeira era da melhor qualidade possível \na olhar pela janela via-se uma paisagem \ntão bela quanto o nascer do sol");
-		inter.escolha1.setText("");
-		inter.escolha2.setText("");
-		inter.escolha3.setText("");
-		inter.escolha4.setText(">");
-
-		jogo.novaPosicao1 = "";
-		jogo.novaPosicao2 = "";
-		jogo.novaPosicao3 = "";
-		jogo.novaPosicao4 = "histiniciopTres";
-	}
-	public void histiniciopTres() {
-		inter.areaPrincipalTexto.setText("esse macaquinho se chamava "+player.nomePlayer+"\ntrabalhava como guarda da ilha em que vivia \ncom o passar dos anos "+player.nomePlayer+" \nencontrou enquanto andava pela ilha o seu amor");
-		inter.escolha1.setText("");
-		inter.escolha2.setText("");
-		inter.escolha3.setText("");
-		inter.escolha4.setText(">");
-
-		jogo.novaPosicao1 = "";
-		jogo.novaPosicao2 = "";
-		jogo.novaPosicao3 = "";
-		jogo.novaPosicao4 = "histiniciopQuatro";
+	public void paraTitulo() {
+		padraoSetup();
+		vc.MostrarTitulo();
 	}
 }

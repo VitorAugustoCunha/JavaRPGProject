@@ -15,7 +15,7 @@ import Jogo.Jogo.EscolhaManipulador;
 
 public class Interface {
 	JFrame tela;
-	public JPanel tituloNomePanel, botaoInicioPanel, textoPrincipalPanel, botaoAcaoPanel;
+	JPanel tituloNomePanel, botaoInicioPanel, textoPrincipalPanel, botaoAcaoPanel;
 	public JPanel playerPanel;
 	public JLabel tituloNomeLabel, vidaLabel, numeroVidaLabel, armaLabel, nomeArmaLabel;
 	public JButton botaoInicio, escolha1, escolha2, escolha3, escolha4;
