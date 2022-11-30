@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,25 +24,45 @@ public class Interface {
 	Font tituloFonte = new Font("Times New Roman", Font.PLAIN, 90);
 	public JTextArea areaPrincipalTexto;
 	Container Cont;
+
+	ImageIcon titoliImage, iconejogo;
+	JPanel tituloImageJPanel;
+	JLabel tituloImageJLabel;
 	
 	
 	public void criatTela(EscolhaManipulador eManipulador, foto ft) {
+
+//icone do jogo
+		iconejogo = new ImageIcon(".//res//iconejogo.jpeg");
+
+//Criar frame
 		tela = new JFrame();
 		tela.setSize(800,600);
 		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tela.getContentPane().setBackground(Color.black);
 		tela.setLayout(null);
+		tela.setIconImage(iconejogo.getImage());
 		tela.setVisible(true);
 		Cont = tela.getContentPane();
+//Imagem inicio
+		titoliImage = new ImageIcon(".//res//capa1.png");
+
+		tituloImageJPanel = new JPanel();
+		tituloImageJPanel.setBounds(0, 0, 800, 600);
+
+		tituloImageJLabel = new JLabel();
+		tituloImageJLabel.setIcon(titoliImage);
+		tituloImageJPanel.add(tituloImageJLabel);
 		
 //Titulo da Tela inicial 
 		
 		tituloNomePanel = new JPanel();
 		tituloNomePanel.setBounds(100, 100, 600, 150);
 		tituloNomePanel.setBackground(Color.black);
+		tituloNomePanel.setOpaque(false);
 		tituloNomeLabel = new JLabel("ADM TEC");
 		tituloNomeLabel.setForeground(Color.white);
-		tituloNomeLabel.setFont(tituloFonte);		
+		tituloNomeLabel.setFont(tituloFonte);	
 
 		
 //Botao de inicio conteiner
@@ -49,6 +70,7 @@ public class Interface {
 		botaoInicioPanel = new JPanel();
 		botaoInicioPanel.setBounds(300,400,200,100);
 		botaoInicioPanel.setBackground(Color.black);
+		botaoInicioPanel.setOpaque(false);
 
 //Botao
 		
@@ -65,6 +87,7 @@ public class Interface {
 		
 		Cont.add(tituloNomePanel);
 		Cont.add(botaoInicioPanel);
+		Cont.add(tituloImageJPanel);
 		
 		textoPrincipalPanel = new JPanel();
 		textoPrincipalPanel.setBounds(50,350,430,250);
@@ -158,6 +181,7 @@ public class Interface {
 
 	//imagem
 		Cont.add(ft.fotoJPanel);
+
 
 	}
 }

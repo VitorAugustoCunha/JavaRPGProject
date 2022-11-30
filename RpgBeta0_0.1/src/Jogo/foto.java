@@ -13,7 +13,7 @@ public class foto {
     public foto(){
         fotoJPanel = new JPanel();
         fotoJPanel.setBounds(50, 50, 400, 250);
-        fotoJPanel.setBackground(Color.blue);
+        fotoJPanel.setBackground(Color.black);
         fotoJPanel.setVisible(false);
         fotoJLabel = new JLabel();
     }

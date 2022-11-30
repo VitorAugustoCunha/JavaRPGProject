@@ -25,6 +25,7 @@ public class visibilidadeControlador {
 	
 	public void Mostrartitologame() {
 		//Mostrar tela de titulo
+		inter.tituloImageJPanel.setVisible(false);
 		inter.tituloNomePanel.setVisible(false);
 		inter.botaoInicioPanel.setVisible(false);
 		

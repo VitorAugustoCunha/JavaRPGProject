@@ -30,7 +30,7 @@ public class Jogo {
 			String suaEscolha = event.getActionCommand();
 			
 			switch(suaEscolha) {
-			case "start": vc.Mostrartitologame(); histP.portaoInicio(); break;
+			case "start": vc.Mostrartitologame(); histP.ini1(); break;
 			case "e1": histP.escolherPossicao(novaPosicao1); break;
 			case "e2": histP.escolherPossicao(novaPosicao2);break;
 			case "e3": histP.escolherPossicao(novaPosicao3);break;

@@ -40,6 +40,7 @@ public class histPrincipal {
 	}
 	public void escolherPossicao(String novaPissicao) {
 		switch(novaPissicao) {
+/*
 		case "portaoInicio": portaoInicio(); break;
 		case "falarGuarda": falarGuarda(); break;
 		case "atacarGuarda": atacarGuarda(); break;
@@ -55,11 +56,21 @@ public class histPrincipal {
 		case "oeste": oeste(); break;
 		case "atacarMostro": atacarMostro(); break;
 		case "playerLuta": playerLuta(); break;
-
-
+		*/
+		case "ini1": ini1(); break;
+		case "ini2": ini2(); break;
+		case "ini3": ini3(); break;
+		case "ini4": ini4(); break;
+		case "ini5": ini5(); break;
+		case "ini6": ini6(); break;
+		case "ini7": ini7(); break;
+		case "ini8": ini8(); break;
+		case "ini9": ini9(); break;
+		case "ficar": ficar(); break;
+		case "fim": fim(); break;
 		}
 	}
-	
+/*
 	public void portaoInicio() {
 		ft.imagemICone = new ImageIcon(".//res//descarregar.jpg");
 		ft.fotoJLabel.setIcon(ft.imagemICone);
@@ -284,5 +295,139 @@ public class histPrincipal {
 	public void paraTitulo() {
 		padraoSetup();
 		vc.MostrarTitulo();
+	}
+*/
+
+	public void ini1(){
+		ft.imagemICone = new ImageIcon(".//res//1.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Era uma vez um pequeno macaquinho\nque habitava em uma ilha lá ele\ntinha uma casa na maior das árvores");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		inter.escolha2.setVisible(false);
+		inter.escolha3.setVisible(false);
+		inter.escolha4.setVisible(false);
+		
+		
+		jogo.novaPosicao1 = "ini2";
+	}
+	public void ini2(){
+		ft.imagemICone = new ImageIcon(".//res//2.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Local este que era invejado pelos\noutros animais a casa era grande\ne bonita");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini3";
+	}
+	public void ini3(){
+		ft.imagemICone = new ImageIcon(".//res//3.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Sua madeira era da melhor qualidade\npossível a olhar pela janela via-se\numa paisagem tão bela quanto o\nnascer do sol");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini4";
+	}
+	public void ini4(){
+		ft.imagemICone = new ImageIcon(".//res//4.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Esse macaquinho se chamava "+player.nomePlayer+"\ne trabalhava como guarda da ilha em\nque vivia");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini5";
+	}
+	public void ini5(){
+		ft.imagemICone = new ImageIcon(".//res//5.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Com o passar dos anos "+player.nomePlayer+"\nencontrou enquanto andava pela ilha\no seu amor");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini6";
+	}
+	public void ini6(){
+		ft.imagemICone = new ImageIcon(".//res//9.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Jessica, uma macaquinha fêmea da sua\nmesma raça os dois se apaixonaram\nlogo foram morar juntos");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini7";
+	}
+	public void ini7(){
+		ft.imagemICone = new ImageIcon(".//res//10.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("A vida de"+player.nomePlayer+" parecia estar\ndando certo até que no\naniversário de 1 ano de\nrelacionamento com Jessica");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini8";
+	}
+	public void ini8(){
+		ft.imagemICone = new ImageIcon(".//res//6.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Piratas atacaram a ilha em meio\na confusão do ataque "+player.nomePlayer+"\nse ver tendo que tomar uma decisão:");
+		inter.escolha1.setText(">");
+		inter.escolha2.setText("");
+		inter.escolha3.setText("");
+		inter.escolha4.setText("");
+		jogo.novaPosicao1 = "ini9";
+	}
+	public void ini9(){
+		ft.imagemICone = new ImageIcon(".//res//7.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Jessica:\n"+player.nomePlayer+" Você não pode ir lutar\né muito perigoso e não quero\nque você se arrisque.");
+		inter.escolha2.setVisible(true);
+		inter.escolha3.setVisible(true);
+
+		inter.escolha1.setText("ficar");
+		inter.escolha2.setText("Sair");
+		inter.escolha3.setText("Sair sem falar");
+		inter.escolha4.setText("");
+
+		jogo.novaPosicao1 = "ficar";
+		jogo.novaPosicao2 = "sair";
+		jogo.novaPosicao3 = "sairSFalar";
+
+	}
+	public void fim(){
+		padraoSetup();
+		vc.MostrarTitulo();
+	}
+	public void ficar(){
+		ft.imagemICone = new ImageIcon(".//res//8.png");
+		ft.fotoJLabel.setIcon(ft.imagemICone);
+		ft.fotoJPanel.add(ft.fotoJLabel);
+		inter.areaPrincipalTexto.setText("Você viveu feliz");
+		inter.escolha2.setVisible(false);
+		inter.escolha3.setVisible(false);
+
+		inter.escolha1.setText("Fim");
+		jogo.novaPosicao1 = "fim";
+	}
+	public void sair(){
+		
+	}
+	public void sairSFalar(){
+
 	}
 }
