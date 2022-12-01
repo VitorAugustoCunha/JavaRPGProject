@@ -40,23 +40,6 @@ public class histPrincipal {
 	}
 	public void escolherPossicao(String novaPissicao) {
 		switch(novaPissicao) {
-/*
-		case "portaoInicio": portaoInicio(); break;
-		case "falarGuarda": falarGuarda(); break;
-		case "atacarGuarda": atacarGuarda(); break;
-		case "estradaFerro": estradaFerro(); break;
-		case "norte": norte(); break;
-		case "leste": leste(); break;
-		case "sul": sul(); break;
-		case "paraTitulo": paraTitulo(); break;
-		case "vitoria": vitoria(); break;
-		case "derrota": derrota(); break;
-		case "finalHisto": finalHisto(); break;
-		case "lutar": lutar(); break;
-		case "oeste": oeste(); break;
-		case "atacarMostro": atacarMostro(); break;
-		case "playerLuta": playerLuta(); break;
-		*/
 		case "ini1": ini1(); break;
 		case "ini2": ini2(); break;
 		case "ini3": ini3(); break;
